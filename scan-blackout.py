@@ -149,7 +149,7 @@ if __name__ == '__main__':
         print("scan-blackout: Found %s scan jobs running or queued" % str(len(scanlist)))
     for scan in scanlist.keys():
         if skipscans:
-            if scanlist[scan].find(skipprefix) >= 0:
+            if scanlist[scan].find(skipprefix) == 0:
                 recordaction(action='Skipped scan %s (%s)' % (scanlist[scan], scan))
                 if enabledebug:
                     print('scan-blackout: Skipping scan %s (%s)' % (scanlist[scan], scan))
